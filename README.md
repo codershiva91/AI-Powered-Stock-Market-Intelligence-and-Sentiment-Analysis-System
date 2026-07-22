@@ -111,3 +111,163 @@ flowchart TD
 | APIs | Finnhub, Yahoo Finance |
 | Deployment | Docker |
 | Version Control | Git |
+
+
+
+
+# 🏗️ System Architecture
+
+```mermaid
+flowchart TB
+
+    %% ======================
+    %% User Layer
+    %% ======================
+
+    User([👤 User])
+
+    User --> UI
+
+    subgraph Frontend
+        UI[🖥️ Streamlit Dashboard]
+        Search[🔍 Stock Search]
+        Chat[🤖 AI Chat Assistant]
+        Dashboard[📈 Market Dashboard]
+    end
+
+    UI --> Search
+    UI --> Chat
+    UI --> Dashboard
+
+    %% ======================
+    %% AI Layer
+    %% ======================
+
+    Search --> LangGraph
+    Chat --> LangGraph
+    Dashboard --> LangGraph
+
+    subgraph AI Orchestration
+        LangGraph[🧠 LangGraph]
+        LLM[Gemini / OpenAI GPT]
+        RAG[RAG Engine]
+    end
+
+    LangGraph --> LLM
+    LangGraph --> RAG
+
+    %% ======================
+    %% Agents
+    %% ======================
+
+    subgraph AI Agents
+        StockAgent[📊 Stock Analysis Agent]
+        NewsAgent[📰 News Analysis Agent]
+        TechnicalAgent[📉 Technical Analysis Agent]
+        Recommendation[💡 AI Recommendation Agent]
+    end
+
+    LangGraph --> StockAgent
+    LangGraph --> NewsAgent
+    LangGraph --> TechnicalAgent
+
+    StockAgent --> Recommendation
+    NewsAgent --> Recommendation
+    TechnicalAgent --> Recommendation
+
+    Recommendation --> LLM
+
+    %% ======================
+    %% Databases
+    %% ======================
+
+    subgraph Storage
+        Maria[(MariaDB)]
+        Qdrant[(Qdrant Vector DB)]
+    end
+
+    RAG --> Maria
+    RAG --> Qdrant
+
+    %% ======================
+    %% ETL Pipeline
+    %% ======================
+
+    subgraph Data Pipeline
+
+        API[Yahoo Finance API<br/>Finnhub API]
+
+        News[Financial News]
+
+        Reddit[Reddit]
+
+        Forum[Market Forums]
+
+        Scraper[BeautifulSoup + Playwright]
+
+        ETL[Python ETL Pipeline]
+
+        Clean[Data Cleaning]
+
+        Validate[Data Validation]
+
+        Feature[Feature Engineering]
+
+    end
+
+    API --> ETL
+
+    News --> Scraper
+    Reddit --> Scraper
+    Forum --> Scraper
+
+    Scraper --> ETL
+
+    ETL --> Clean
+    Clean --> Validate
+    Validate --> Feature
+    Feature --> Maria
+
+    %% ======================
+    %% NLP
+    %% ======================
+
+    subgraph NLP Pipeline
+
+        Text[Text Preprocessing]
+
+        Embed[Sentence Transformers]
+
+        FinBERT[FinBERT]
+
+    end
+
+    Scraper --> Text
+
+    Text --> Embed
+    Text --> FinBERT
+
+    Embed --> Qdrant
+
+    FinBERT --> Maria
+
+    %% ======================
+    %% Analytics
+    %% ======================
+
+    subgraph Analytics
+
+        Indicator[RSI<br/>MACD<br/>EMA<br/>SMA<br/>Bollinger Bands]
+
+        Semantic[Semantic Search]
+
+    end
+
+    Maria --> Indicator
+
+    Qdrant --> Semantic
+
+    Semantic --> RAG
+
+    Indicator --> Recommendation
+```
