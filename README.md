@@ -399,3 +399,23 @@ AI-Stock-Market-Intelligence/
     ├── embeddings.ipynb
     └── experimentation.ipynb
 ```
+
+#📂 Folder Responsibility
+
+| Folder                 | Purpose                                             |
+| ---------------------- | --------------------------------------------------- |
+| **config**             | Configuration, environment settings, logging        |
+| **data_collection**    | Collect stock prices, news, and forum discussions   |
+| **preprocessing**      | Data cleaning, transformation, feature engineering  |
+| **analytics**          | Technical indicators and fundamental metrics        |
+| **sentiment_analysis** | FinBERT-based sentiment analysis                    |
+| **embeddings**         | Generate embeddings and manage vector storage       |
+| **database**           | MariaDB and Qdrant connectivity and CRUD operations |
+| **rag**                | Retrieval-Augmented Generation pipeline             |
+| **llm**                | Gemini/OpenAI integration and prompt handling       |
+| **agents**             | LangGraph multi-agent workflows                     |
+| **dashboard**          | Streamlit pages and visualizations                  |
+| **utils**              | Shared helper functions and utilities               |
+| **tests**              | Unit and integration tests                          |
+| **docs**               | Architecture, API documentation, screenshots        |
+| **notebooks**          | Exploratory analysis and experiments                |
