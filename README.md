@@ -4,7 +4,7 @@ Key Technologies  Python | FastAPI | MariaDB | NLP | FinBERT | Sentence Transfor
 #Project Architecture (Version 2.0) 
 
 
-                                🏗️ Project Architecture
+                         #🏗️ Project Architecture
 
 ```mermaid
 flowchart TD
@@ -91,118 +91,6 @@ flowchart TD
     Qdrant --> Recommendation
     LLM --> Recommendation
 ```
-
-# 🏗️ Project Architecture
-
-```mermaid
-flowchart TD
-
-    User([👤 User])
-
-    User --> Dashboard[📊 Streamlit Dashboard]
-
-    Dashboard --> Search[🔍 Stock Search]
-    Dashboard --> Chat[💬 AI Chat Assistant]
-    Dashboard --> Market[📈 Market Dashboard]
-
-    Search --> LangGraph
-    Chat --> LangGraph
-    Market --> LangGraph
-
-    %% ---------------- AI Layer ----------------
-
-    subgraph AI Layer
-        LangGraph[🧠 LangGraph Orchestrator]
-        LLM[🤖 Gemini / OpenAI GPT]
-        RAG[📚 Retrieval-Augmented Generation]
-        Recommend[💡 AI Recommendation Engine]
-        Summary[📝 Market Summary Generator]
-    end
-
-    LangGraph --> RAG
-    LangGraph --> LLM
-
-    RAG --> Recommend
-    LLM --> Recommend
-    LLM --> Summary
-
-    %% ---------------- Storage ----------------
-
-    subgraph Storage Layer
-        MariaDB[(🗄️ MariaDB)]
-        Qdrant[(🔎 Qdrant Vector Database)]
-    end
-
-    Recommend --> MariaDB
-    RAG --> MariaDB
-    RAG --> Qdrant
-
-    %% ---------------- Analytics ----------------
-
-    subgraph Analytics
-        Technical[📊 Technical Indicators]
-        Fundamental[🏢 Fundamental Analysis]
-        Prediction[📈 Trend Prediction]
-    end
-
-    MariaDB --> Technical
-    MariaDB --> Fundamental
-
-    Technical --> Recommend
-    Fundamental --> Recommend
-    Prediction --> Recommend
-
-    %% ---------------- NLP ----------------
-
-    subgraph NLP Pipeline
-        Preprocess[🧹 Text Preprocessing]
-        FinBERT[😊 FinBERT Sentiment Analysis]
-        Embed[🧬 Sentence Transformers]
-    end
-
-    Preprocess --> FinBERT
-    Preprocess --> Embed
-
-    FinBERT --> MariaDB
-    Embed --> Qdrant
-
-    %% ---------------- ETL ----------------
-
-    subgraph Data Processing
-        ETL[⚙️ Python ETL Pipeline]
-        Cleaning[🧹 Data Cleaning]
-        Validation[✔️ Data Validation]
-        Feature[⚡ Feature Engineering]
-    end
-
-    ETL --> Cleaning
-    Cleaning --> Validation
-    Validation --> Feature
-
-    Feature --> MariaDB
-
-    %% ---------------- Sources ----------------
-
-    subgraph Data Sources
-        Finnhub[📈 Finnhub API]
-        Yahoo[💹 Yahoo Finance]
-        News[📰 Financial News]
-        Reddit[👥 Reddit]
-        Forum[💬 Market Forums]
-    end
-
-    Finnhub --> ETL
-    Yahoo --> ETL
-
-    News --> Scraper
-    Reddit --> Scraper
-    Forum --> Scraper
-
-    Scraper[🕷️ BeautifulSoup / Playwright]
-
-    Scraper --> Preprocess
-```
-
 
 # 🚀 Technology Stack
 
