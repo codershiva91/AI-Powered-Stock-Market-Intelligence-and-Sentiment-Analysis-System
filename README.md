@@ -272,35 +272,38 @@ flowchart TB
 
 #📂 Project Structure
 
+# 📂 Project Structure
+
+```text
 AI-Stock-Market-Intelligence/
 │
-├── README.md
-├── requirements.txt
-├── .env
-├── .gitignore
-├── LICENSE
+├── README.md                    # Project documentation
+├── requirements.txt             # Python dependencies
+├── .env                         # Environment variables
+├── .gitignore                   # Git ignored files
+├── LICENSE                      # Project license
 │
-├── app.py                          # Streamlit entry point
+├── app.py                       # Streamlit application entry point
 │
-├── config/
+├── config/                      # Configuration files
 │   ├── config.py
 │   ├── settings.py
 │   └── logging_config.py
 │
-├── data/
+├── data/                        # Local data storage
 │   ├── raw/
 │   ├── processed/
 │   ├── cache/
 │   └── embeddings/
 │
-├── database/
+├── database/                    # Database layer
 │   ├── schema.sql
 │   ├── connection.py
 │   ├── mariadb.py
 │   ├── qdrant_client.py
 │   └── crud.py
 │
-├── data_collection/
+├── data_collection/             # Data ingestion
 │   ├── stock_data/
 │   │   ├── finnhub_collector.py
 │   │   ├── yahoo_collector.py
@@ -318,42 +321,42 @@ AI-Stock-Market-Intelligence/
 │   │
 │   └── pipeline.py
 │
-├── preprocessing/
+├── preprocessing/               # Data preprocessing
 │   ├── clean_stock_data.py
 │   ├── clean_news.py
 │   ├── remove_duplicates.py
 │   ├── text_preprocessing.py
 │   └── feature_engineering.py
 │
-├── analytics/
+├── analytics/                   # Market analytics
 │   ├── technical_indicators.py
 │   ├── fundamentals.py
 │   ├── market_statistics.py
 │   └── recommendation_features.py
 │
-├── sentiment_analysis/
+├── sentiment_analysis/          # FinBERT sentiment analysis
 │   ├── finbert_model.py
 │   ├── sentiment_pipeline.py
 │   └── sentiment_utils.py
 │
-├── embeddings/
+├── embeddings/                  # Vector embedding generation
 │   ├── embedding_generator.py
 │   ├── sentence_transformer.py
 │   └── vector_store.py
 │
-├── rag/
+├── rag/                         # Retrieval-Augmented Generation
 │   ├── retriever.py
 │   ├── context_builder.py
 │   ├── prompt_template.py
 │   └── rag_pipeline.py
 │
-├── llm/
+├── llm/                         # LLM integration
 │   ├── gemini_client.py
 │   ├── openai_client.py
 │   ├── llm_router.py
 │   └── market_summary.py
 │
-├── agents/
+├── agents/                      # LangGraph AI agents
 │   ├── langgraph_workflow.py
 │   ├── stock_agent.py
 │   ├── news_agent.py
@@ -361,7 +364,7 @@ AI-Stock-Market-Intelligence/
 │   ├── recommendation_agent.py
 │   └── chat_agent.py
 │
-├── dashboard/
+├── dashboard/                   # Streamlit UI
 │   ├── home.py
 │   ├── stock_dashboard.py
 │   ├── market_dashboard.py
@@ -369,14 +372,14 @@ AI-Stock-Market-Intelligence/
 │   ├── recommendation.py
 │   └── visualization.py
 │
-├── utils/
+├── utils/                       # Shared utilities
 │   ├── helper.py
 │   ├── constants.py
 │   ├── validators.py
 │   ├── logger.py
 │   └── scheduler.py
 │
-├── tests/
+├── tests/                       # Unit & integration tests
 │   ├── test_api.py
 │   ├── test_database.py
 │   ├── test_sentiment.py
@@ -384,14 +387,15 @@ AI-Stock-Market-Intelligence/
 │   ├── test_rag.py
 │   └── test_dashboard.py
 │
-├── docs/
+├── docs/                        # Documentation
 │   ├── architecture.md
 │   ├── api_documentation.md
 │   ├── database_design.md
 │   └── screenshots/
 │
-└── notebooks/
+└── notebooks/                   # Research & experimentation
     ├── EDA.ipynb
     ├── sentiment_analysis.ipynb
     ├── embeddings.ipynb
     └── experimentation.ipynb
+```
