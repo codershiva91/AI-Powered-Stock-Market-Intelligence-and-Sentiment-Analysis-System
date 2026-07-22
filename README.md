@@ -4,7 +4,7 @@ Key Technologies  Python | FastAPI | MariaDB | NLP | FinBERT | Sentence Transfor
 #Project Architecture (Version 2.0) 
 
 
-                         #🏗️ Project Architecture
+ #🏗️ Project Architecture
 
 ```mermaid
 flowchart TD
