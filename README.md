@@ -91,3 +91,23 @@ flowchart TD
     Qdrant --> Recommendation
     LLM --> Recommendation
 ```
+
+
+
+# 🚀 Technology Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Language | Python |
+| Backend | FastAPI |
+| Frontend | Streamlit |
+| Database | MariaDB |
+| Vector Database | Qdrant |
+| LLM | Gemini, OpenAI GPT |
+| NLP | FinBERT, Sentence Transformers |
+| Framework | LangGraph |
+| Search | Semantic Search |
+| Web Scraping | BeautifulSoup, Playwright |
+| APIs | Finnhub, Yahoo Finance |
+| Deployment | Docker |
+| Version Control | Git |
