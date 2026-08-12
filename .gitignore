@@ -1,0 +1,44 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ML model/cache files
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.pkl
+*.joblib
+
+# Qdrant local storage
+qdrant_storage/
+
+# Temporary files
+*.tmp
+*.temp

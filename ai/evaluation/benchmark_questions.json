@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "category": "company",
+        "question": "Latest Reliance news"
+    },
+    {
+        "id": 2,
+        "category": "company",
+        "question": "Infosys quarterly results"
+    },
+    {
+        "id": 3,
+        "category": "market",
+        "question": "Latest Nifty sentiment"
+    },
+    {
+        "id": 4,
+        "category": "company",
+        "question": "Should I buy TCS?"
+    },
+    {
+        "id": 5,
+        "category": "negative",
+        "question": "What is Python?"
+    }
+]

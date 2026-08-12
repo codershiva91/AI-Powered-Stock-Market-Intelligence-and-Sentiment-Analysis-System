@@ -1,0 +1,24 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 000000B5 AE69:1A39
+D:.
+¦   config.py
+¦   db.py
+¦   finbert_config.py
+¦   finbert_model.py
+¦   logger.py
+¦   preprocess.py
+¦   project_structure.txt
+¦   Sentiment_etl.py
+¦   test_fine.py
+¦   utils.py
+¦   
++---logs
+¦       sentiment_etl.log
+¦       
++---__pycache__
+        config.cpython-314.pyc
+        db.cpython-314.pyc
+        finbert_model.cpython-314.pyc
+        logger.cpython-314.pyc
+        preprocess.cpython-314.pyc
+        
