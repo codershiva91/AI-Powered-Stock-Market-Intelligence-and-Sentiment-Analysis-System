@@ -1,0 +1,42 @@
+[
+    {
+        "test": 1,
+        "question": "Latest Reliance news",
+        "response": "Insufficient information available in the knowledge base.",
+        "retrieved_docs": 10,
+        "response_time": 29.26,
+        "status": "FAIL"
+    },
+    {
+        "test": 2,
+        "question": "Infosys quarterly results",
+        "response": "Insufficient information available in the knowledge base.",
+        "retrieved_docs": 10,
+        "response_time": 15.03,
+        "status": "FAIL"
+    },
+    {
+        "test": 3,
+        "question": "Latest Nifty sentiment",
+        "response": "1. Direct Answer\nThe latest Nifty sentiment is Negative.\n\n2. Supporting Evidence\nAccording to Document 4, published on June 24, 2026 (the most recent article in the context), Nifty 50 Futures are \"vulnerable to fall more,\" indicating a negative sentiment. This follows Document 1 from June 23, 2026, which reported an expiry-led sell-off and pressure from Asian markets dragging the Nifty lower toward the 23,800 mark.\n\n3. Overall Sentiment\nNegative\n\n4. Confidence Level\n0.8136 (as reported in the latest document for NIFTY 50)",
+        "retrieved_docs": 10,
+        "response_time": 7.18,
+        "status": "PASS"
+    },
+    {
+        "test": 4,
+        "question": "Should I buy TCS?",
+        "response": "Insufficient information available in the knowledge base.",
+        "retrieved_docs": 10,
+        "response_time": 7.33,
+        "status": "FAIL"
+    },
+    {
+        "test": 5,
+        "question": "What is Python?",
+        "response": "Insufficient information available in the knowledge base.",
+        "retrieved_docs": 10,
+        "response_time": 9.31,
+        "status": "FAIL"
+    }
+]

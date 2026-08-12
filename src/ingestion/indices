@@ -1,0 +1,34 @@
+import yfinance as yf
+import pandas as pd
+import os
+
+indices = {
+    "NIFTY50": "^NSEI",
+    "BANKNIFTY": "^NSEBANK",
+    "SENSEX": "^BSESN"
+}
+
+os.makedirs("data/raw/indices", exist_ok=True)
+
+for name, ticker in indices.items():
+
+    print(f"Downloading {name}")
+
+    df = yf.download(
+        ticker,
+        start="2021-01-01",
+        end="2026-06-30",
+        auto_adjust=False,
+        progress=False
+    )
+
+    df.reset_index(inplace=True)
+
+    df.to_csv(
+        f"data/raw/indices/{name}.csv",
+        index=False
+    )
+
+    print(f"Saved {name}")
+
+print("All indices downloaded")
